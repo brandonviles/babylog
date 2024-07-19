@@ -124,7 +124,7 @@
                       ]"
                       aria-hidden="true"
                     />
-                    Daiper
+                    diaper
                   </router-link>
                 </li>
                 <li>

@@ -41,7 +41,10 @@
               </div>
             </TransitionChild>
             <!-- Sidebar component, swap this element with another sidebar if you like -->
-            <div v-if="false" class="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4">
+            <div
+              v-if="babiesStore.baby"
+              class="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4"
+            >
               <div class="flex h-16 shrink-0 items-center">
                 <img
                   class="h-8 w-auto"
@@ -56,7 +59,7 @@
                       <li>
                         <RouterLink
                           @click="sidebarOpen = false"
-                          :to="{ name: 'dashboard', params: { id: selectedBaby.id } }"
+                          :to="{ name: 'dashboard', params: { id: babiesStore.baby.id } }"
                           :class="[
                             router.currentRoute.value.name === 'dashboard'
                               ? 'bg-gray-50 text-indigo-600'
@@ -80,7 +83,7 @@
                       <li>
                         <RouterLink
                           @click="sidebarOpen = false"
-                          :to="{ name: 'nutrition', params: { id: selectedBaby.id } }"
+                          :to="{ name: 'nutrition', params: { id: babiesStore.baby.id } }"
                           :class="[
                             router.currentRoute.value.name === 'nutrition'
                               ? 'bg-gray-50 text-indigo-600'
@@ -104,7 +107,7 @@
                       <li>
                         <RouterLink
                           @click="sidebarOpen = false"
-                          :to="{ name: 'growth', params: { id: selectedBaby.id } }"
+                          :to="{ name: 'growth', params: { id: babiesStore.baby.id } }"
                           :class="[
                             router.currentRoute.value.name === 'growth'
                               ? 'bg-gray-50 text-indigo-600'
@@ -210,3 +213,4 @@ const sidebarOpen = ref(false)
 
 const router = useRouter()
 </script>
+./BabySelector.vue.bak
